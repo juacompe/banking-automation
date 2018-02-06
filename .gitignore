@@ -6,3 +6,6 @@ selenium-screenshot-*.png
 
 # secrets
 scbeasy/secret.robot
+
+# my scripts
+scbeasy/juacompe/*.robot
