@@ -13,7 +13,7 @@ ${AMOUNT}               20000
 ${DESCRIPTION}          ค่ากระเป๋าหลุยส์
 
 *** Test Cases ***
-Save Money In Family Account
+จ่ายค่ากระเป๋าหลุยส์
     Login To SCB Easy
     Transfer To Another SCB Account  ${FROM ACCOUNT LABEL}  ${TO ACCOUNT LABEL}  ${AMOUNT}  ${DESCRIPTION}
     Confirm Transfer
