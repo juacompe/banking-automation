@@ -15,12 +15,12 @@ Go To Transfer To My Account Page
 Click Transfer To My Account
     Click Link  ctl15_BetweenMyAccount_LinkButton
 
-Click Link Between My Account
-    Click Link  DataProcess_ctl00_OWN_LinkButton
-
 Go To Transfer History Between My Account
     Click Link Transfer History
     Click Link Between My Account
+
+Click Link Between My Account
+    Click Link  DataProcess_ctl00_OWN_LinkButton
 
 Latest History Between My Account Should Be
     [Arguments]  ${label}  ${amount}
