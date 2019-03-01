@@ -12,6 +12,9 @@ Transfer To Another Bank Account
 Send OTP
     Click Element  nxt
 
+Wait For User To Confirm Transfer With OTP
+    Wait Until Page Contains  Transfer has been made according to the following details.
+
 Choose The Account To Transfer From
     [Arguments]  ${account label}
     Select From List By Label  ctl00$DataProcess$CustSendAccount_DropDownList  ${account label}
