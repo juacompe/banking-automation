@@ -7,6 +7,10 @@ Transfer To Another Bank Account
     transfer_to_another_bank_accounts.Input Amount  ${amount}
     transfer_to_another_bank_accounts.Input Descripton  ${desc}
     Click Next
+    Send OTP
+
+Send OTP
+    Click Element  nxt
 
 Choose The Account To Transfer From
     [Arguments]  ${account label}
