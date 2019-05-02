@@ -10,7 +10,7 @@ Transfer To Another Bank Account
     Send OTP
 
 Send OTP
-    Click Element  nxt
+    Click Element  cnfrm
 
 Wait For User To Confirm Transfer With OTP
     Wait Until Page Contains  Transfer has been made according to the following details.
