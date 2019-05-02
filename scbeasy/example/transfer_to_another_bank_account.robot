@@ -10,9 +10,9 @@ Resource  ../transfer_to_another_bank_accounts.robot
 
 *** Variables ***
 ${FROM ACCOUNT LABEL}   เงินเดือน - XXXX009999
-${TO ACCOUNT LABEL}     ป้า - 9202222222 - TMB BANK PUBLIC COMPANY  LIMITED
+${TO ACCOUNT LABEL}     แม่ค้าออนไลน์ - 9202222222 - TMB BANK PUBLIC COMPANY  LIMITED
 ${AMOUNT}               2000
-${DESCRIPTION}          ภาษี+ประกัน+ออม
+${DESCRIPTION}          เอฟปลอกไอโฟน
 
 *** Test Cases ***
 Saving For My Annual Tax
