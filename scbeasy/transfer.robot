@@ -60,6 +60,7 @@ Latest History Should Be
     ${number}=  Extract Account Number Out Of Label  ${label}
     Element Should Contain  css=#DataProcess_GridView1 tr:nth-child(3) td:nth-child(3)  ${number}
     Element Should Contain  css=#DataProcess_GridView1 tr:nth-child(3) td:nth-child(4)  ${amount}.00
+    Element Should Contain  css=#DataProcess_GridView1 tr:nth-child(3) td:nth-child(5)  Completed
 
 Extract Account Number Out Of Label
     [Arguments]  ${label}
