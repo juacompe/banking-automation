@@ -1,9 +1,9 @@
 *** Settings ***
 Library  SeleniumLibrary
-Suite Setup  Set Selenium Timeout  5 min
 Suite Teardown  Close All Browsers
 Resource  ../login.robot
+Resource  ../transfer.robot
 
 *** Test Cases ***
-Saving For My Annual Tax
+จ่ายค่ากระเป๋าหลุยส์
     Login
