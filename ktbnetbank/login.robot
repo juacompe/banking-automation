@@ -1,6 +1,7 @@
 *** Settings ***
 Resource  variables.robot
 Resource  secret.robot
+Resource  keywords.robot
 
 *** Keywords ***
 Login
@@ -10,6 +11,3 @@ Login
     Set Focus To Element  id_ImageCode
     Wait Until Page Contains  ยินดีต้อนรับ  timeout=2m
     Wait For Loading
-
-Wait For Loading
-    Wait Until Element Is Not Visible  ModalLoading
