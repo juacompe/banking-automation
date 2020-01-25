@@ -3,6 +3,12 @@ Library  String
 Resource  keywords.robot
 
 *** Keywords ***
+Transfer To 3rd Party Account And Go Back To Home
+    [Arguments]  ${from}  ${to}  ${amount}  ${desc}
+    Transfer To 3rd Party Account  ${from}  ${to}  ${amount}  ${desc}
+    Confirm Transfer  ${desc}
+    Go Back To Home Page
+
 Transfer To 3rd Party Account
     [Arguments]  ${from}  ${to}  ${amount}  ${desc}
     Go To Transfer To 3rd Party Account Page
@@ -26,7 +32,7 @@ Choose Input Account Number
 Wait For User To Choose The Account From
     [Arguments]  ${from}
     Wait For UI Block
-    Wait Until Page Contains Element  css:#divAccountFromSelection #divFundFrom_1620244454  2m
+    Wait Until Page Contains Element  css:#divAccountFromSelection #divFundFrom_1620244454  timeout=2m
 
 Input The Account The Money Is Going To
     [Arguments]  ${to}
@@ -42,10 +48,10 @@ Input Descripton
 
 Click Next
     Click Link  lnkThirdPartyNextStep
-    Wait Until Page Contains  ยืนยันการโอนเงิน
+    Wait Until Page Contains  ยืนยันการโอนเงิน  timeout=5m
     Set Focus To Element  txtTOP
 
 Confirm Transfer
     [Arguments]  ${desc}
-    Wait Until Page Contains  สำเร็จ  5m
-    Capture Page Screenshot  ${desc}
+    Wait Until Page Contains  สำเร็จ  timeout=2m
+    Capture Page Screenshot  ${desc}.png
