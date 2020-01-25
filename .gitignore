@@ -9,3 +9,6 @@ scbeasy/secret.robot
 
 # my scripts
 scbeasy/juacompe/*.robot
+
+# mac cache
+.DS_Store
