@@ -1,6 +1,7 @@
 *** Settings ***
 Resource  variables.robot
 Resource  secret.robot
+Suite Setup  Set Selenium Timeout  5 min
 
 *** Keywords ***
 Login
