@@ -1,0 +1,3 @@
+robotframework==3.0.4
+robotframework-csvlibrary==0.0.3
+robotframework-seleniumlibrary==3.3.1
