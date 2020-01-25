@@ -8,7 +8,7 @@ selenium-screenshot-*.png
 secret.robot
 
 # my scripts
-**/juacompe/*.robot
+**/juacompe/*
 
 # mac cache
 .DS_Store
