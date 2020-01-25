@@ -5,10 +5,10 @@ report.html
 selenium-screenshot-*.png
 
 # secrets
-scbeasy/secret.robot
+secret.robot
 
 # my scripts
-scbeasy/juacompe/*.robot
+**/juacompe/*.robot
 
 # mac cache
 .DS_Store
