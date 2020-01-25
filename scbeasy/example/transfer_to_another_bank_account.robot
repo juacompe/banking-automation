@@ -2,8 +2,6 @@
 Library  SeleniumLibrary
 Suite Setup  Set Selenium Timeout  5 min
 Suite Teardown  Close All Browsers
-Resource  ../variables.robot
-Resource  ../secret.robot
 Resource  ../login.robot
 Resource  ../transfer.robot
 Resource  ../transfer_to_another_bank_accounts.robot

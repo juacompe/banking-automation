@@ -1,8 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
 Suite Teardown  Close All Browsers
-Resource  ../variables.robot
-Resource  ../secret.robot
 Resource  ../login.robot
 Resource  ../transfer.robot
 Resource  ../transfer_between_my_accounts.robot
