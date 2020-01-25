@@ -1,8 +1,15 @@
 *** Settings ***
 Library  String
+Library  CSVLibrary
 Resource  keywords.robot
 
 *** Keywords ***
+Transfer To List
+    [Arguments]  ${from}  ${csv_file_name}
+    @{list}=  Read CSV File To List  ${csv_file_name}
+    :FOR    ${row}    IN    @{list[1:]}
+    \    Transfer To 3rd Party Account And Go Back To Home  ${from}  ${row[0]}  ${row[1]}  ${row[2]}
+
 Transfer To 3rd Party Account And Go Back To Home
     [Arguments]  ${from}  ${to}  ${amount}  ${desc}
     Transfer To 3rd Party Account  ${from}  ${to}  ${amount}  ${desc}
@@ -54,4 +61,4 @@ Click Next
 Confirm Transfer
     [Arguments]  ${desc}
     Wait Until Page Contains  สำเร็จ  timeout=2m
-    Capture Page Screenshot  ${desc}.png
+    Capture Page Screenshot  out/${desc}.png
