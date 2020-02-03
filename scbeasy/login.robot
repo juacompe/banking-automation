@@ -1,6 +1,6 @@
 *** Settings ***
-Resource  ../variables.robot
-Resource  ../secret.robot
+Resource  variables.robot
+Resource  secret.robot
 
 *** Keywords ***
 Login To SCB Easy
