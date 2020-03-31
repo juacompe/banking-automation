@@ -9,6 +9,7 @@ secret.robot
 
 # my scripts
 **/juacompe/*
+**/my/*
 
 # mac cache
 .DS_Store
