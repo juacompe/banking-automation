@@ -39,7 +39,7 @@ Choose Input Account Number
 Wait For User To Choose The Account From
     [Arguments]  ${from}
     Wait For UI Block
-    Wait Until Page Contains Element  css:#divAccountFromSelection #divFundFrom_1620244454  timeout=2m
+    Wait Until Page Contains Element  css:#divAccountFromSelection #divFundFrom_${from}  timeout=2m
 
 Input The Account The Money Is Going To
     [Arguments]  ${to}
