@@ -1,12 +1,12 @@
 *** Settings ***
 Library  String
-Library  CSVLibrary
+Library  CSVLib
 Resource  keywords.robot
 
 *** Keywords ***
 Transfer To List
     [Arguments]  ${from}  ${csv_file_name}
-    @{list}=  Read CSV File To List  ${csv_file_name}
+    @{list}=  Read CSV As Single List  ${csv_file_name}
     :FOR    ${row}    IN    @{list[1:]}
     \    Transfer To 3rd Party Account And Go Back To Home  ${from}  ${row[0]}  ${row[1]}  ${row[2]}
 
