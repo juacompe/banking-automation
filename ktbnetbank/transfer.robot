@@ -1,4 +1,5 @@
 *** Settings ***
+Library  Collections
 Library  String
 Library  CSVLib
 Resource  keywords.robot
@@ -6,7 +7,7 @@ Resource  keywords.robot
 *** Keywords ***
 Transfer To List
     [Arguments]  ${from}  ${csv_file_name}
-    @{list}=  Read CSV As Single List  ${csv_file_name}
+    @{list}=  Read CSV File To List  ${csv_file_name}
     :FOR    ${row}    IN    @{list[1:]}
     \    Transfer To 3rd Party Account And Go Back To Home  ${from}  ${row[0]}  ${row[1]}  ${row[2]}
 
@@ -62,3 +63,21 @@ Confirm Transfer
     [Arguments]  ${desc}
     Wait Until Page Contains  สำเร็จ  timeout=2m
     Capture Page Screenshot  out/${desc}.png
+
+Read CSV File To List
+    [Arguments]  ${csv_file_name}
+    ${list}=  Create List
+    @{rows}=  Read CSV As Single List  ${csv_file_name}
+    :FOR    ${row}    IN    @{rows}
+    \    ${words}=  Split String  ${row}  ,
+    \    ${words}=  Remove Quotes From List Of String  ${words}
+    \    Append To List  ${list}  ${words}
+    [Return]  ${list}
+
+Remove Quotes From List Of String
+    [Arguments]  ${words}
+    ${list}=  Create List
+    :FOR  ${word}  IN  @{words}
+    \    ${word_without_quotes}=  Remove String  ${word}  "
+    \    Append To List  ${list}  ${word_without_quotes}
+    [Return]  ${list}
