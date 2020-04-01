@@ -6,7 +6,7 @@ Resource  ../transfer.robot
 
 *** Variables ***
 ${FROM}             1XXXXXXXX4
-${CSV_LIST}         ./list.csv
+${CSV_LIST}         ${CURDIR}/list.csv
 
 *** Test Cases ***
 Transfer To My List
