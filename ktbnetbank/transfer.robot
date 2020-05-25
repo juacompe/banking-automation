@@ -1,7 +1,6 @@
 *** Settings ***
-Library  Collections
 Library  String
-Library  CSVLib
+Library  CSVLibrary
 Resource  keywords.robot
 
 *** Keywords ***
@@ -63,21 +62,3 @@ Confirm Transfer
     [Arguments]  ${desc}
     Wait Until Page Contains  สำเร็จ  timeout=2m
     Capture Page Screenshot  out/${desc}.png
-
-Read CSV File To List
-    [Arguments]  ${csv_file_name}
-    ${list}=  Create List
-    @{rows}=  Read CSV As Single List  ${csv_file_name}
-    :FOR    ${row}    IN    @{rows}
-    \    ${words}=  Split String  ${row}  ,
-    \    ${words}=  Remove Quotes From List Of String  ${words}
-    \    Append To List  ${list}  ${words}
-    [Return]  ${list}
-
-Remove Quotes From List Of String
-    [Arguments]  ${words}
-    ${list}=  Create List
-    :FOR  ${word}  IN  @{words}
-    \    ${word_without_quotes}=  Remove String  ${word}  "
-    \    Append To List  ${list}  ${word_without_quotes}
-    [Return]  ${list}
