@@ -7,8 +7,9 @@ Resource  keywords.robot
 Transfer To List
     [Arguments]  ${from}  ${csv_file_name}
     @{list}=  Read CSV File To List  ${csv_file_name}
-    :FOR    ${row}    IN    @{list[1:]}
-    \    Transfer To 3rd Party Account And Go Back To Home  ${from}  ${row[0]}  ${row[1]}  ${row[2]}
+    FOR    ${row}    IN    @{list[1:]}
+        Transfer To 3rd Party Account And Go Back To Home  ${from}  ${row[0]}  ${row[1]}  ${row[2]}
+    END
 
 Transfer To 3rd Party Account And Go Back To Home
     [Arguments]  ${from}  ${to}  ${amount}  ${desc}
